@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         b站番剧播放页内跳转樱花搜索
 // @namespace    http://tampermonkey.net/
-// @version      1.0.3
+// @version      1.0.5
 // @description  打开播放页面发现没会员？点击追番按钮旁边的番剧名跳转至樱花动漫观看
 // @author       kakasearch
 // @match        https://www.bilibili.com/bangumi/*

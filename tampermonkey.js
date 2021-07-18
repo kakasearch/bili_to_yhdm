@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         b站番剧播放页内跳转樱花搜索
 // @namespace    http://tampermonkey.net/
-// @version      1.1.0
+// @version      1.1.1
 // @description  打开播放页面发现没会员？点击追番按钮旁边的番剧名跳转至樱花动漫观看
 // @author       kakasearch
 // @match        https://www.bilibili.com/bangumi/*
@@ -79,7 +79,16 @@
                     //url: 'http://localhost:1760/bili2yh?bv=' + bv + "&name=" + query_name+"&yname="+yname,
                     url: upload_url + "/bili2yh?bv=" + bv + "&name=" + query_name+"&yname="+yname,
                     onload: function(xhr) {
+                        console.log(xhr.responseText)
                         if (xhr.status == 200) {
+                            let data = JSON.parse(xhr.responseText)
+                            if(data.code == 0){
+                            console.log("found")
+                                let name = data.data
+                                window.location.href = 'http://www.yhdm.so/search/'+ name
+                            }else{
+                            console.log("not found")
+                            }
                             console.log('上传bug成功')
                         } else {
                             console.log('上传bug失败')

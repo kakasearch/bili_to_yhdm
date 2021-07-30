@@ -11,7 +11,7 @@ def handle_fiddle(fidder_headers):
 			[k,v] = item.split(': ')
 			if k !=  "Content-Length: ":  #去除Content-Length
 				headers[k] = v
-
+	return headers
 def get_zh_name(ani_id):
 	"""
 	通过截图搜索结果查询对应的番剧名字，返回中文简体的名字

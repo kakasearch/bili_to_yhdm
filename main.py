@@ -57,8 +57,8 @@ while True:
 	data = notfound.find_one()
 	if data:
 		#查询
-		bv = data.bv
-		yname = data.yname
+		bv = data["bv"]
+		yname = data["yname"]
 		img = get_img(bv)
 		names = []
 		for i in range(3):
